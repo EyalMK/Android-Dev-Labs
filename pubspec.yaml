@@ -1,5 +1,5 @@
-name: android-lab-exercises
-description: "A new Flutter project."
+name: android_lab_exercises
+description: "Android development lab course - all class exercises."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
