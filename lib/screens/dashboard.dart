@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:third_lab_revised/components/buttons/service_button.dart';
-import 'package:third_lab_revised/components/screen_app_bar.dart';
-import 'package:third_lab_revised/components/texts/secondary_screen_title.dart';
+import 'package:android_lab_exercises/components/buttons/service_button.dart';
+import 'package:android_lab_exercises/components/screen_app_bar.dart';
+import 'package:android_lab_exercises/components/texts/secondary_screen_title.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});

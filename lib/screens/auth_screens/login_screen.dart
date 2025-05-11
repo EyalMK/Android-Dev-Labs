@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:third_lab_revised/components/forms/auth_form.dart';
-import 'package:third_lab_revised/components/screen_app_bar.dart';
-import 'package:third_lab_revised/components/texts/secondary_screen_title.dart';
-import 'package:third_lab_revised/screens/auth_screens/phone_verification.dart';
+import 'package:android_lab_exercises/components/forms/auth_form.dart';
+import 'package:android_lab_exercises/components/screen_app_bar.dart';
+import 'package:android_lab_exercises/components/texts/secondary_screen_title.dart';
+import 'package:android_lab_exercises/screens/auth_screens/phone_verification.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

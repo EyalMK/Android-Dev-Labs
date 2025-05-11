@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:third_lab_revised/components/forms/text_form_field.dart';
-import 'package:third_lab_revised/utils/password_validator.dart';
+import 'package:android_lab_exercises/components/forms/text_form_field.dart';
+import 'package:android_lab_exercises/utils/password_validator.dart';
 
 import '../buttons/filled_action_button.dart';
 

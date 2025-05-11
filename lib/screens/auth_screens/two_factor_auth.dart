@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:third_lab_revised/screens/dashboard.dart';
-import 'package:third_lab_revised/screens/auth_screens/phone_verification.dart';
+import 'package:android_lab_exercises/screens/dashboard.dart';
+import 'package:android_lab_exercises/screens/auth_screens/phone_verification.dart';
 
 import '../../components/forms/digit_2fa_form.dart';
 import '../../components/texts/screen_title.dart';

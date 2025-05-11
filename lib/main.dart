@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_lab_revised/screens/welcome_screen.dart';
+import 'package:android_lab_exercises/screens/welcome_screen.dart';
 
 void main() {
   runApp(MyApp(title: "My Basic List"));

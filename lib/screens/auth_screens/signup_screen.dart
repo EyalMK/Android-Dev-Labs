@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:third_lab_revised/components/forms/auth_form.dart';
-import 'package:third_lab_revised/components/texts/secondary_screen_title.dart';
+import 'package:android_lab_exercises/components/forms/auth_form.dart';
+import 'package:android_lab_exercises/components/texts/secondary_screen_title.dart';
 
 import '../../components/screen_app_bar.dart';
 import 'login_screen.dart';
