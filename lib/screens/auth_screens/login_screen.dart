@@ -1,3 +1,4 @@
+import 'package:android_lab_exercises/screens/auth_screens/two_factor_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:android_lab_exercises/components/forms/auth_form.dart';
 import 'package:android_lab_exercises/components/screen_app_bar.dart';
@@ -19,7 +20,7 @@ class _LoginState extends State<Login> {
     if (email == 'test@test.com' && password == 'password!') {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => PhoneVerification()),
+        MaterialPageRoute(builder: (context) => TwoFactorAuth()),
       );
     } else {
       showDialog(
@@ -38,6 +39,13 @@ class _LoginState extends State<Login> {
     }
   }
 
+  void _navigateToPhoneLogin() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => PhoneVerification()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +56,24 @@ class _LoginState extends State<Login> {
               SizedBox(height: 10),
               SecondaryScreenTitle("Login to your account"),
               SizedBox(height: 40),
-              AuthForm(_submit),
+              AuthForm("Login", _submit),
+              Text(
+                'or',
+                style: TextStyle(
+                    fontSize: 20
+                )
+              ),
+              SizedBox(height: 10),
+              InkWell(
+                onTap: _navigateToPhoneLogin,
+                child: Text(
+                  'Sign in using phone number',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+              ),
               SizedBox(height: 120),
               Image.network("https://img.freepik.com/premium-vector/success-business-concept-key-unlock-solve-business-problem-professional-give-solutions_178888-1798.jpg?w=1800")
             ]

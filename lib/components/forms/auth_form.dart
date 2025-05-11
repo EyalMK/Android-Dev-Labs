@@ -6,8 +6,9 @@ import '../buttons/filled_action_button.dart';
 
 class AuthForm extends StatefulWidget {
   final void Function(Map<String, dynamic> formData) onSubmit;
+  final String submitButtonTitle;
 
-  const AuthForm(this.onSubmit, {super.key});
+  const AuthForm(this.submitButtonTitle, this.onSubmit, {super.key});
 
   @override
   State<AuthForm> createState() => _AuthFormState();
@@ -55,7 +56,7 @@ class _AuthFormState extends State<AuthForm> {
               onSaved: (value) => _formData['password'] = value!,
             ),
             SizedBox(height: 20),
-            FilledActionButton("Sign up", 400, 75, Colors.blue, _submit)
+            FilledActionButton(widget.submitButtonTitle, 400, 75, Colors.blue, _submit)
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:android_lab_exercises/components/screen_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:android_lab_exercises/components/texts/screen_title.dart';
@@ -16,7 +17,8 @@ class _PhoneVerificationState extends State<PhoneVerification> {
   String _rawPhoneNumber = '';
 
   void _submit() {
-    if (_rawPhoneNumber.replaceAll(RegExp(r'\D'), '') == '0522628803') {
+    String formattedPhoneNumber = _rawPhoneNumber.replaceAll(RegExp(r'\D'), '');
+    if (formattedPhoneNumber == '972522628803') {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const TwoFactorAuth()),
@@ -41,6 +43,7 @@ class _PhoneVerificationState extends State<PhoneVerification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: ScreenAppBar("Authentication"),
       body: SingleChildScrollView(
         child: Column(
           children: [

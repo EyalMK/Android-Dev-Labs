@@ -13,7 +13,6 @@ class ScreenTitle extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 32,
             color: Colors.black,
-            backgroundColor: Colors.white54
         )
     );
   }

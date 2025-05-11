@@ -26,8 +26,7 @@ class _TwoFactorAuthState extends State<TwoFactorAuth> {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
           builder: (context) => Dashboard(),
-        ),
-            (Route<dynamic> route) => false,
+        ), (Route<dynamic> route) => false,
       );
     } else {
       showDialog(

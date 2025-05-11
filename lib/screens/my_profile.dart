@@ -12,7 +12,6 @@ class ProfileScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           CircleAvatar(
             radius: 70,

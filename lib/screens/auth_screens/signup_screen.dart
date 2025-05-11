@@ -1,3 +1,4 @@
+import 'package:android_lab_exercises/screens/auth_screens/phone_verification.dart';
 import 'package:flutter/material.dart';
 import 'package:android_lab_exercises/components/forms/auth_form.dart';
 import 'package:android_lab_exercises/components/texts/secondary_screen_title.dart';
@@ -20,6 +21,12 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
+  void _navigateToPhoneLogin() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => PhoneVerification())
+    );
+  }
+
   void _submit(Map<String, dynamic> formData) {
     _navigateToLogin();
   }
@@ -32,7 +39,24 @@ class _SignUpPageState extends State<SignUpPage> {
         children: [
           SizedBox(height: 10),
           SecondaryScreenTitle("Create an account, it's free"),
-          AuthForm(_submit),
+          AuthForm("Sign up", _submit),
+          Text(
+              'or',
+              style: TextStyle(
+                  fontSize: 20
+              )
+          ),
+          SizedBox(height: 10),
+          InkWell(
+            onTap: _navigateToPhoneLogin,
+            child: Text(
+              'Sign up using phone number',
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+              ),
+            ),
+          ),
           SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:android_lab_exercises/screens/welcome_screen.dart';
 
 void main() {
-  runApp(MyApp(title: "My Basic List"));
+  runApp(MyApp());
 }
 
 
 class MyApp extends StatelessWidget {
-  final String title;
-
-  const MyApp({super.key, required this.title});
+  const MyApp({super.key});
 
 
   // This widget is the root of your application.
