@@ -1,10 +1,10 @@
-import 'package:android_lab_exercises/screens/settings.dart';
 import 'package:flutter/material.dart';
+import 'package:android_lab_exercises/screens/settings.dart';
+import 'package:android_lab_exercises/screens/my_profile.dart';
+import 'package:android_lab_exercises/screens/my_files.dart';
 import 'package:android_lab_exercises/components/buttons/service_button.dart';
 import 'package:android_lab_exercises/components/screen_app_bar.dart';
 import 'package:android_lab_exercises/components/texts/secondary_screen_title.dart';
-import 'package:android_lab_exercises/screens/my_profile.dart';
-import 'package:android_lab_exercises/screens/my_files.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -15,9 +15,11 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int currentPageIndex = 0;
+  bool showServiceSwitch = false;
+  bool usingAlternateServices = false;
   String? selectedService = 'Cleaning';
 
-  final Map<String, String> services = {
+  final Map<String, String> defaultServices = {
     'Cleaning': 'images/cleaning.png',
     'Plumber': 'images/plumber.png',
     'Electrician': 'images/electrician.png',
@@ -26,9 +28,35 @@ class _DashboardState extends State<Dashboard> {
     'Gardener': 'images/gardening.png',
   };
 
+  final Map<String, String> alternateServices = {
+    'Laundry': 'images/laundry-machine.png',
+    'Security': 'images/shield.png',
+    'Babysitter': 'images/mother.png',
+    'Driver': 'images/driver.png',
+    'Cook': 'images/cooking.png',
+    'Mechanic': 'images/mechanic.png',
+  };
+
+  Map<String, String> get currentServices =>
+      usingAlternateServices ? alternateServices : defaultServices;
+
+  void selectService(String service) {
+    setState(() {
+      selectedService = service;
+    });
+  }
+
+  void toggleServiceSet() {
+    setState(() {
+      usingAlternateServices = !usingAlternateServices;
+      selectedService = null;
+      showServiceSwitch = false; // Hide the arrow after toggle
+    });
+  }
+
   List<Widget> buildServiceRows() {
     final List<Widget> rows = [];
-    final entries = services.entries.toList();
+    final entries = currentServices.entries.toList();
 
     for (int i = 0; i < entries.length; i += 2) {
       rows.add(
@@ -63,23 +91,53 @@ class _DashboardState extends State<Dashboard> {
     return rows;
   }
 
-  void selectService(String service) {
-    setState(() {
-      selectedService = service;
-    });
-  }
-
   Widget getCurrentPage() {
     switch (currentPageIndex) {
       case 0:
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 10),
-              const SecondaryScreenTitle("Which services do you need?"),
-              const SizedBox(height: 100),
-              ...buildServiceRows(),
-            ],
+        return GestureDetector(
+          onTap: () {
+            setState(() {
+              showServiceSwitch = true;
+            });
+          },
+          child: Container(
+            color: Colors.transparent,
+            child: Stack(
+              children: [
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 10),
+                      Text(
+                        usingAlternateServices
+                            ? "Choose from alternate services"
+                            : "Which services do you need?",
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 100),
+                      ...buildServiceRows(),
+                      const SizedBox(height: 300),
+                    ],
+                  ),
+                ),
+                if (showServiceSwitch)
+                  Positioned(
+                    bottom: 80,
+                    left: usingAlternateServices ? 16 : null,
+                    right: usingAlternateServices ? null : 16,
+                    child: FloatingActionButton(
+                      heroTag: 'toggle-service-set',
+                      onPressed: toggleServiceSet,
+                      child: Icon(
+                        usingAlternateServices ? Icons.arrow_back : Icons.arrow_forward,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
           ),
         );
       case 1:
@@ -105,6 +163,7 @@ class _DashboardState extends State<Dashboard> {
         onDestinationSelected: (index) {
           setState(() {
             currentPageIndex = index;
+            showServiceSwitch = false; // Hide the FAB when switching tabs
           });
         },
         destinations: const [
