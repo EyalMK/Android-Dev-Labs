@@ -21,8 +21,10 @@ class _TwoFactorAuthState extends State<TwoFactorAuth> {
 
   void _submit(Map<String, dynamic> formData) {
     final code = formData['code'] ?? '';
+    // Filter out non-numeric characters
+    String filteredCode = code.replaceAll(RegExp(r'\D'), '');
 
-    if (code == '123456') {
+    if (filteredCode.length == 6) {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
           builder: (context) => Dashboard(),
@@ -51,7 +53,10 @@ class _TwoFactorAuthState extends State<TwoFactorAuth> {
       body:
         Column(
             children: [
-              Image.network("https://img.freepik.com/free-vector/enter-otp-concept-illustration_114360-7897.jpg?t=st=1746372144~exp=1746375744~hmac=8b3bbe61caa899d24d695efb8fb4932516641596c586c55757998b44e98f6e4a&w=1380"),
+              Image.asset(
+                "images/two_factor_auth.png",
+                fit: BoxFit.contain,
+              ),
               SizedBox(height: 20),
               ScreenTitle("Phone Verification"),
               SizedBox(height: 10),

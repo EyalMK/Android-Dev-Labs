@@ -72,6 +72,10 @@ flutter:
     - images/driver.png
     - images/cooking.png
     - images/mechanic.png
+    - images/login.png
+    - images/phone_login.png
+    - images/two_factor_auth.png
+    - images/welcome.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

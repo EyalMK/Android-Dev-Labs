@@ -4,7 +4,6 @@ import 'package:android_lab_exercises/screens/my_profile.dart';
 import 'package:android_lab_exercises/screens/my_files.dart';
 import 'package:android_lab_exercises/components/buttons/service_button.dart';
 import 'package:android_lab_exercises/components/screen_app_bar.dart';
-import 'package:android_lab_exercises/components/texts/secondary_screen_title.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -50,7 +49,7 @@ class _DashboardState extends State<Dashboard> {
     setState(() {
       usingAlternateServices = !usingAlternateServices;
       selectedService = null;
-      showServiceSwitch = false; // Hide the arrow after toggle
+      showServiceSwitch = false;
     });
   }
 
@@ -163,7 +162,7 @@ class _DashboardState extends State<Dashboard> {
         onDestinationSelected: (index) {
           setState(() {
             currentPageIndex = index;
-            showServiceSwitch = false; // Hide the FAB when switching tabs
+            showServiceSwitch = false;
           });
         },
         destinations: const [

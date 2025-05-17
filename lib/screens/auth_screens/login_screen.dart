@@ -74,8 +74,11 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              SizedBox(height: 120),
-              Image.network("https://img.freepik.com/premium-vector/success-business-concept-key-unlock-solve-business-problem-professional-give-solutions_178888-1798.jpg?w=1800")
+              SizedBox(height: 90),
+              Image.asset(
+                "images/login.png",
+                fit: BoxFit.contain,
+              )
             ]
         ),
     );

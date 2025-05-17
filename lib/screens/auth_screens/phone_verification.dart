@@ -18,7 +18,7 @@ class _PhoneVerificationState extends State<PhoneVerification> {
 
   void _submit() {
     String formattedPhoneNumber = _rawPhoneNumber.replaceAll(RegExp(r'\D'), '');
-    if (formattedPhoneNumber == '972522628803') {
+    if (formattedPhoneNumber.startsWith('972')) {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const TwoFactorAuth()),
@@ -48,9 +48,10 @@ class _PhoneVerificationState extends State<PhoneVerification> {
         child: Column(
           children: [
             const SizedBox(height: 100),
-            Image.network(
-              "https://img.freepik.com/free-vector/enter-otp-concept-illustration_114360-7897.jpg?t=st=1746372144~exp=1746375744~hmac=8b3bbe61caa899d24d695efb8fb4932516641596c586c55757998b44e98f6e4a&w=1380",
+            Image.asset(
+              "images/phone_login.png",
               height: 200,
+              fit: BoxFit.contain,
             ),
             const SizedBox(height: 20),
             const ScreenTitle("Phone Verification"),

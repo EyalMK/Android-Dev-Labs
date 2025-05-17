@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tamir Kucherov\'s Profile'),
+        title: Text('Israel Israeli\'s Profile'),
         centerTitle: true,
       ),
       body: Column(
@@ -16,12 +16,12 @@ class ProfileScreen extends StatelessWidget {
           CircleAvatar(
             radius: 70,
             backgroundImage: NetworkImage(
-              'https://i.pravatar.cc/150?img=14', // sample profile pic
+              'https://i.pravatar.cc/150?img=14',
             ),
           ),
           SizedBox(height: 15),
           Text(
-            'Tamir Kucherov',
+            'Israel Israeli',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Text(

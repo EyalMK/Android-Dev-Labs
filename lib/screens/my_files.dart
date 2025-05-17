@@ -23,7 +23,6 @@ class _MyFilesState extends State<MyFiles> {
       body: SafeArea(
         child: Column(
           children: [
-            // Top Row with Back Button and Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
               child: Row(
@@ -48,7 +47,7 @@ class _MyFilesState extends State<MyFiles> {
                 itemBuilder: (context, index) {
                   return ListTile(
                     leading: Image.asset(
-                      'images/pdf.png', // Replace with your PDF icon path
+                      'images/pdf.png',
                       width: 32,
                       height: 32,
                     ),
@@ -65,7 +64,6 @@ class _MyFilesState extends State<MyFiles> {
               ),
             ),
 
-            // Bottom Buttons
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
@@ -73,7 +71,6 @@ class _MyFilesState extends State<MyFiles> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        // Handle upload from link
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blueAccent,
@@ -89,7 +86,6 @@ class _MyFilesState extends State<MyFiles> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        // Handle upload from device
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.cyan,

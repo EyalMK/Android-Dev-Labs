@@ -44,7 +44,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           SizedBox(height: 10),
           SecondaryScreenTitle("Please login or sign up"),
           SizedBox(height: 40),
-          Image.network("https://img.freepik.com/free-vector/hand-drawn-business-planning-concept_23-2149170411.jpg?t=st=1743957230~exp=1743960830~hmac=39c6bc7f96f9552f479a3cd3cae7c5241ae28cc5f3c8307723f4b93675c7ba4c&w=1380"),
+          Image.asset(
+            "images/welcome.png",
+            fit: BoxFit.contain,
+          ),
           SizedBox(height: 30),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
